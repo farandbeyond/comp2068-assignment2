@@ -1,0 +1,111 @@
+
+/* defaults from  express */
+body {
+    padding: 0px;
+    margin:0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+main{
+    padding: 50px;
+}
+/* Global */
+h1.title{
+    display: flex;
+}
+a {
+    color: #00B7FF;
+}
+.inline{
+    display: inline;
+}
+html{
+    background-color: mediumseagreen;
+}
+footer{
+    padding-top: 20px;
+}
+div.afterNav{
+    margin-left: 10px;
+}
+/* Navbar in partials/head.ejs*/
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    background-color: #333;
+}
+ul.navbar li {
+    display: inline;
+    float: left;
+}
+ul.navbar li.active{
+    background-color: aqua;
+}
+ul.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ul.navbar li a:hover {
+    background-color: #111;
+}
+/* Table in projects.ejs */
+table.projectList{
+    border: solid 2px black;
+}
+table.projectList td{
+    border: solid 1px black;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+table.projectList tr.columnHeads{
+    text-align: center;
+    font-weight: bold;
+}
+/* contact form in contact.ejs */
+form.contact{
+    max-width: 500px;
+    border: solid black 1px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+form.contact p{
+    padding-left: 5px;
+    margin-bottom: 0px;
+}
+form.contact textarea{
+    max-width: 390px;
+}
+/* Footer link list in partial/foot.ejs */
+footer a{
+    display: inline;
+    color: #b12;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+footer li{
+    padding-bottom: 10px;
+}
+footer ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+footer ul p{
+    display: inline;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+footer p{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+
