@@ -8,11 +8,11 @@
 <body>
     <nav>
         <ul class="navbar">
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Home</a></li>
+            <li><a href="/"         <% if(pageNum == 1){ %>class="active" <% } %> >Home</a></li>
+            <li><a href="/projects" <% if(pageNum == 2){ %>class="active" <% } %> >Projects</a></li>
+            <li><a href="/"         <% if(pageNum == 3){ %>class="active" <% } %> >Home</a></li>
+            <li><a href="/"         <% if(pageNum == 4){ %>class="active" <% } %> >Home</a></li>
+            <li><a href="/"         <% if(pageNum == 5){ %>class="active" <% } %> >Home</a></li>
         </ul>
     </nav>
 <main>
