@@ -1,3 +1,30 @@
 <% include partials/header.ejs %>
 <h1><%= title %></h1>
+
+<table class="projectList">
+    <tr class="columnHeads">
+        <th>Project Title</th>
+        <th>Project Language</th>
+        <th>Project Description</th>
+        <th>Team Members</th>
+        <th>Starting Date</th>
+        <th>Current Active Project</th>
+        <th>Project Finished</th>
+        <th>Edit Entry</th>
+        <th>Remove Entry</th>
+    </tr>
+    <% for (var i=0; i < projects.length; i++) { %>
+    <tr>
+        <td><%= projects[i].title %></td>
+        <td><%= projects[i].language %></td>
+        <td><%= projects[i].description %></td>
+        <td><%= projects[i].team %></td>
+        <td><%= projects[i].startdate %></td>
+        <td><%= projects[i].active %></td>
+        <td><%= projects[i].complete %></td>
+        <td><a href="/projects/<%= games[i]._id %>  ">Edit</a></td>
+        <td><a href="/projects/delete/<%= games[i]._id %>" class="confirmation">Delete</a></td>
+    </tr>
+    <% } %>
+</table>
 <% include partials/footer.ejs %>
