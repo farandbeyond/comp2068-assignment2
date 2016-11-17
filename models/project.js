@@ -30,8 +30,7 @@ var projectSchema = new mongoose.Schema({
         type: Boolean
     },
     completed:{
-        type: Boolean,
-        required: 'Completion status unknown'
+        type: Boolean
     }
 });
 

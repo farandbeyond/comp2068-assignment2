@@ -34,19 +34,22 @@ router.get('/add', function(req,res,next){
 });
 
 router.post('/add', function(req, res, next) {
-    // use the Game model and call the Mongoose create function
+    // use the Project model and call the Mongoose create function
     Project.create( {
         title: req.body.title,
-        publisher: req.body.publisher,
-        genre: req.body.genre,
-        year: req.body.year
-    }, function(err, Game) {
+        language: req.body.language,
+        description: req.body.description,
+        team: req.body.team,
+        startdate: req.body.startdate,
+        active: req.body.active,
+        completed: req.body.completed
+    }, function(err, Project) {
         if (err) {
             console.log(err);
             res.render('error');
         }
         else {
-            res.redirect('/games');
+            res.redirect('/projects');
         }
     });
 });
