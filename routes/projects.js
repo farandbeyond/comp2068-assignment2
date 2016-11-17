@@ -20,8 +20,33 @@ router.get('/', function(req, res, next) {
             res.render('projects', {
                 title: 'Projects',
                 pageNum: 2,
-                games: projects
+                projects: projects
             });
+        }
+    });
+});
+
+router.get('/add', function(req,res,next){
+   res.render('addProject',{
+       title: 'Add new project',
+       pageNum: 2
+    });
+});
+
+router.post('/add', function(req, res, next) {
+    // use the Game model and call the Mongoose create function
+    Project.create( {
+        title: req.body.title,
+        publisher: req.body.publisher,
+        genre: req.body.genre,
+        year: req.body.year
+    }, function(err, Game) {
+        if (err) {
+            console.log(err);
+            res.render('error');
+        }
+        else {
+            res.redirect('/games');
         }
     });
 });

@@ -22,9 +22,12 @@
         <td><%= projects[i].startdate %></td>
         <td><%= projects[i].active %></td>
         <td><%= projects[i].complete %></td>
-        <td><a href="/projects/<%= games[i]._id %>  ">Edit</a></td>
-        <td><a href="/projects/delete/<%= games[i]._id %>" class="confirmation">Delete</a></td>
+        <td><a href="/projects/<%= projects[i]._id %>  ">Edit</a></td>
+        <td><a href="/projects/delete/<%= projects[i]._id %>" class="confirmation">Delete</a></td>
     </tr>
     <% } %>
 </table>
+
+<a href="/projects/add">Add New Project</a>
+
 <% include partials/footer.ejs %>

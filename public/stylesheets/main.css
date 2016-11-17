@@ -62,10 +62,18 @@ table.projectList td{
     padding-left: 10px;
     padding-right: 20px;
 }
+table.projectList th{
+    border: solid 1px black;
+    padding-left: 20px;
+    padding-right: 30px;
+}
 table.projectList tr.columnHeads{
     text-align: center;
     font-weight: bold;
 }
+/* form in addProject.ejs */
+
+/* These do not yet exist*/
 /* contact form in contact.ejs */
 form.contact{
     max-width: 500px;
