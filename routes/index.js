@@ -100,10 +100,10 @@ router.get('/github/callback', passport.authenticate('github', {
 // send to google to do the authentication
 // profile gets us their basic information including their name
 // email gets their emails
-app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+router.get('/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
 
 // the callback after google has authenticated the user
-app.get('/auth/google/callback',
+router.get('/google/callback',
     passport.authenticate('google', {
       successRedirect : '/',
       failureRedirect : '/login'
