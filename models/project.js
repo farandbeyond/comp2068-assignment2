@@ -27,10 +27,10 @@ var projectSchema = new mongoose.Schema({
         required: 'No starting date entered'
     },
     active:{
-        type: Boolean
+        type: String
     },
     completed:{
-        type: Boolean
+        type: String
     }
 });
 

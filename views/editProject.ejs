@@ -1,0 +1,82 @@
+<% include partials/header.ejs %>
+
+<h1><%= title %></h1>
+
+<form method="post" class="projectForm">
+    <table>
+        <tr>
+            <div class='form-group'>
+                <td>
+                    <label for='title' class='col-sm-2 control-label'>Title:</label>
+                </td>
+                <td>
+                    <input type='text' name='title' id='title' required value="<%= project.title %>"/>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class='form-group'>
+                <td>
+                <label for='language' class='col-sm-2 control-label'>Language:</label>
+                </td>
+                <td>
+                <input type='text' name='language' id='language' value="<%= project.language %>"/>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class='form-group'>
+                <td>
+                <label for='description' class='col-sm-2 control-label'>Description:</label>
+                </td>
+                <td>
+                <input type='text' name='description' id='description' required value="<%= project.description %>"/>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class='form-group'>
+                <td>
+                <label for='team' class='col-sm-2 control-label'>Team:</label>
+                </td>
+                <td>
+                <input type='text' name='team' id='team' required value="<%= project.team %>"/>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class='form-group'>
+                <td>
+                <label for='startdate' class='col-sm-2 control-label'>Start Date:</label>
+                </td>
+                <td>
+                <input type='number' name='startdate' id='startdate' required value="<%= project.startdate %>"/>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class='form-group'>
+                <td>
+                <label for='active' class='col-sm-2 control-label'>Active?:</label>
+                </td>
+                <td>
+                <input type='text' name='active' id='active' required value="<%= project.active %>"/>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class='form-group'>
+                <td>
+                <label for='complete' class='col-sm-2 control-label'>Complete?:</label>
+                </td>
+                <td>
+                <input type='text' name='complete' id='complete' required value="<%= project.completed %>"/>
+                </td>
+            </div>
+        </tr>
+    </table>
+    <button type='submit' >Submit Edits</button>
+</form>
+
+
+<% include partials/footer.ejs %>

@@ -21,13 +21,14 @@
         <td><%= projects[i].team %></td>
         <td><%= projects[i].startdate %></td>
         <td><%= projects[i].active %></td>
-        <td><%= projects[i].complete %></td>
-        <td><a href="/projects/<%= projects[i]._id %>  ">Edit</a></td>
-        <td><a href="/projects/delete/<%= projects[i]._id %>" class="confirmation">Delete</a></td>
+        <td><%= projects[i].completed %></td>
+        <td><button onclick="location.href='/projects/<%= projects[i]._id %>'">Edit <%= projects[i].title %> </button></td>
+        <td><button onclick="location.href='/projects/delete/<%= projects[i]._id %>'">Delete <%= projects[i].title %></button></td>
     </tr>
     <% } %>
 </table>
-
+<button onclick="location.href='/projects/add'">Add Project</button>
+<!--
 <a href="/projects/add">Add New Project</a>
-
+-->
 <% include partials/footer.ejs %>

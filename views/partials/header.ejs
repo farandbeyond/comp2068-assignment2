@@ -9,10 +9,14 @@
     <nav>
         <ul class="navbar">
             <li><a href="/"         <% if(pageNum == 1){ %>class="active" <% } %> >Home</a></li>
-            <li><a href="/projects" <% if(pageNum == 2){ %>class="active" <% } %> >Projects</a></li>
-            <li><a href="/"         <% if(pageNum == 3){ %>class="active" <% } %> >Home</a></li>
-            <li><a href="/"         <% if(pageNum == 4){ %>class="active" <% } %> >Home</a></li>
-            <li><a href="/"         <% if(pageNum == 5){ %>class="active" <% } %> >Home</a></li>
+            <% if(user!=null){ %>
+                <li><a href="/projects" <% if(pageNum == 2){ %>class="active" <% } %> >Projects</a></li>
+                <li><a href="/users"    <% if(pageNum == 5){ %>class="active" <% } %> >User List</a></li>
+                <li><a href="/logout"   <% if(pageNum == 6){ %>class="active" <% } %> >Logout</a></li>
+            <% }else{ %>
+                <li><a href="/login"    <% if(pageNum == 3){ %>class="active" <% } %> >Login</a></li>
+                <li><a href="/register" <% if(pageNum == 4){ %>class="active" <% } %> >Register</a></li>
+            <% } %>
         </ul>
     </nav>
 <main>
