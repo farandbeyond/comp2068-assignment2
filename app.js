@@ -144,13 +144,14 @@ passport.use(new GoogleStrategy({
             return done(null, user);
           } else {
             // if the user isnt in our database, create a new user
-            var newUser = new Account();
+            var newUser = new Account({
+              oauthID: profile.id,
+              username: profile.displayName,
+              created: Date.now()
+            });
 
             // set all of the relevant information
-            newUser._id    = profile.id;
-            newUser.token = token;
-            newUser.username  = profile.displayName;
-            newUser.email = profile.emails[0].value; // pull the first email
+
 
             // save the user
             newUser.save(function(err) {
