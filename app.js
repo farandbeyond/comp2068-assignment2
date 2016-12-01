@@ -119,6 +119,51 @@ passport.use(new githubStrategy({
       });
     }));
 
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+// google auth config
+passport.use(new GoogleStrategy({
+      clientID        : config.ids.google.clientID,
+      clientSecret    : config.ids.google.clientSecret,
+      callbackURL     : config.ids.google.callbackURL,
+
+    },
+    function(token, refreshToken, profile, done) {
+
+      // make the code asynchronous
+      // User.findOne won't fire until we have all our data back from Google
+      process.nextTick(function() {
+
+        // try to find the user based on their google id
+        Account.findOne({ 'google.id' : profile.id }, function(err, user) {
+          if (err)
+            return done(err);
+
+          if (user) {
+
+            // if a user is found, log them in
+            return done(null, user);
+          } else {
+            // if the user isnt in our database, create a new user
+            var newUser = new Account();
+
+            // set all of the relevant information
+            newUser._id    = profile.id;
+            newUser.token = token;
+            newUser.username  = profile.displayName;
+            newUser.email = profile.emails[0].value; // pull the first email
+
+            // save the user
+            newUser.save(function(err) {
+              if (err)
+                throw err;
+              return done(null, newUser);
+            });
+          }
+        });
+      });
+
+    }));
+
 //manage sessions
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());

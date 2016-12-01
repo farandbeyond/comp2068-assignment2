@@ -14,6 +14,11 @@ module.exports = {
             clientID: '8f17d6d783210ec26edc',
             clientSecret: '123e1af2f8093fc6102fd2763ab54f98b41e1ded',
             callbackURL: 'http://localhost:3000/github/callback'
+        },
+        google: {
+            clientID: '516160540008-aat4pkss8r28ncphk7mv44ab0qgt8hvc.apps.googleusercontent.com',
+            clientSecret: 'JIhlCpN1DeYoBm-z2NqAMm04',
+            callbackURL: 'http://localhost:3000/google/callback'
         }
     }
 };
